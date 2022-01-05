@@ -18,6 +18,8 @@
 
 ## Chapter 8 - Compliance
 - [HIPAA](https://www.healthit.gov/topic/privacy-security-and-hipaa/hipaa-basics)
+- [Health Information Trust Alliance (HITRUST) Common Security Framework (CSF) and Azure](https://docs.microsoft.com/en-us/compliance/regulatory/offering-hitrust)
+- [HIPAA HITRUST 9.2 blueprint sample](https://docs.microsoft.com/en-us/azure/governance/blueprints/samples/hipaa-hitrust-9-2)
 
 ## Chapter 9
 - [Fuzzing to improve the security and reliability of cloud services with RESTler](https://www.youtube.com/watch?v=FYmiPoRwEbE)
