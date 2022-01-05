@@ -17,6 +17,7 @@
 - [Azure Security Benchmark](https://docs.microsoft.com/en-us/security/benchmark/azure/)
 
 ## Chapter 8 - Compliance
+- [Service Trust Portal](https://servicetrust.microsoft.com/)
 - [HIPAA](https://www.healthit.gov/topic/privacy-security-and-hipaa/hipaa-basics)
 - [Health Information Trust Alliance (HITRUST) Common Security Framework (CSF) and Azure](https://docs.microsoft.com/en-us/compliance/regulatory/offering-hitrust)
 - [HIPAA HITRUST 9.2 blueprint sample](https://docs.microsoft.com/en-us/azure/governance/blueprints/samples/hipaa-hitrust-9-2)
