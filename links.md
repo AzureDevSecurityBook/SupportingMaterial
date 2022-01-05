@@ -17,7 +17,7 @@
 
 
 ## Chapter 8 - Compliance
-- [HIPAA](https://www.cdc.gov/phlp/publications/topic/hipaa.html)
+- [HIPAA](https://www.healthit.gov/topic/privacy-security-and-hipaa/hipaa-basics)
 
 ## Chapter 9
 - [Fuzzing to improve the security and reliability of cloud services with RESTler](https://www.youtube.com/watch?v=FYmiPoRwEbE)
