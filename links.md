@@ -13,7 +13,7 @@
 ## Chapter 6
 
 
-## Chapter 7
+## Chapter 7 - Governance
 
 
 ## Chapter 8 - Compliance
@@ -30,4 +30,6 @@
 ## Chapter 11
 
 ## Chapter 12
+
+## Chapter 15 - Network Security for Developers
 - [Enterprise-Scale Landing Zones](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/)
