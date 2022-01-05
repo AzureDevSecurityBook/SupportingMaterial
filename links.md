@@ -30,3 +30,4 @@
 ## Chapter 11
 
 ## Chapter 12
+- [enterprise scale landing zones](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/)
