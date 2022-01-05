@@ -17,11 +17,11 @@
 
 
 ## Chapter 8 - Compliance
-[https://www.cdc.gov/phlp/publications/topic/hipaa.html](https://www.cdc.gov/phlp/publications/topic/hipaa.html)
+[HIPAA](https://www.cdc.gov/phlp/publications/topic/hipaa.html)
 
 ## Chapter 9
 [Fuzzing to improve the security and reliability of cloud services with RESTler](https://www.youtube.com/watch?v=FYmiPoRwEbE)
-[REST API Fuzz Testing (RAFT)](https://github.com/microsoft/rest-api-fuzz-testing)
+[REST API Fuzz Testing RAFT](https://github.com/microsoft/rest-api-fuzz-testing)
 
 ## Chapter 10
 
