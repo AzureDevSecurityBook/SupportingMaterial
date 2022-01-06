@@ -41,7 +41,7 @@
 
 ## Chapter 16
 
-## Chapter 17
-
-## Chapter 18 Cryptography in Azure
+## Chapter 17 Cryptography in Azure
 - [Test TLS Connectivity with OpenSSL](https://djangocas.dev/blog/test-tls-connectivity-with-openssl/)
+
+## Chapter 18
