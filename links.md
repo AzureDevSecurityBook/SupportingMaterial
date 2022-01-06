@@ -38,3 +38,10 @@
 
 ## Chapter 15 - Network Security for Developers
 - [Enterprise-Scale Landing Zones](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/)
+
+## Chapter 16
+
+## Chapter 17
+
+## Chapter 18 Cryptography in Azure
+- [Test TLS Connectivity with OpenSSL](https://djangocas.dev/blog/test-tls-connectivity-with-openssl/)
