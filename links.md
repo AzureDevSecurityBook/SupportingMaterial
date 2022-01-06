@@ -38,6 +38,19 @@
 
 ## Chapter 15 - Network Security for Developers
 - [Enterprise-Scale Landing Zones](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/)
+- [Traditional Hub and Spoke Network](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli)
+- [Virtual WAN Hub and Spoke Network](https://docs.microsoft.com/en-us/azure/architecture/networking/hub-spoke-vwan-architecture)
+- [Azure Firewall](https://docs.microsoft.com/en-us/azure/firewall/overview)
+- [Azure Web Application Firewalls](https://docs.microsoft.com/en-us/azure/web-application-firewall/overview)
+- [Azure Load Balamcing Services Selection](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/load-balancing-overview#azure-load-balancing-services)
+- [API Management Gateway](https://docs.microsoft.com/en-us/azure/api-management/api-management-key-concepts)
+- [Compine App GW with APIM](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-integrate-internal-vnet-appgateway)
+- [Azure App Proxy](https://docs.microsoft.com/en-us/azure/active-directory/app-proxy/what-is-application-proxy)
+- [Virtual Network service endpoints](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview)
+- [Azure Private Link](https://docs.microsoft.com/en-us/azure/private-link/private-link-overview?toc=/azure/virtual-network/toc.json)
+- [Azure Private Link service availability](https://docs.microsoft.com/en-us/azure/private-link/availability)
+- [What is Azure Private Endpoint?](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview)
+- [Integrate your app with an Azure virtual network](https://docs.microsoft.com/en-us/azure/app-service/overview-vnet-integration)
 
 ## Chapter 16
 
