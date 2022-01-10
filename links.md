@@ -1,42 +1,47 @@
 # Links referenced in Designing and Developing Secure Azure Solutions
 
-## Chapter 1
+## Chapter 1 - Secure Development Lifecycle Processes 
 
-## Chapter 2
+## Chapter 2 - Secure Design 
 
-## Chapter 3
+## Chapter 3 - Security Patterns
 
-## Chapter 4
+## Chapter 4 - Threat Modeling
 
-## Chapter 5
+## Chapter 5 - The Role of Identity 
 
-## Chapter 6
+## Chapter 6 - Authentication & Authorization 
 
+## Chapter 7 - Protecting Secrets 
 
-## Chapter 7 - Governance
+## Chpater 8 - Monitoring and Audit
+
+## Chapter 9 - Governance
 - [Azure Security Benchmark](https://docs.microsoft.com/en-us/security/benchmark/azure/)
 
-## Chapter 8 - Compliance
+## Chapter 10 - Compliance
 - [Service Trust Portal](https://servicetrust.microsoft.com/)
 - [HIPAA](https://www.healthit.gov/topic/privacy-security-and-hipaa/hipaa-basics)
 - [Health Information Trust Alliance (HITRUST) Common Security Framework (CSF) and Azure](https://docs.microsoft.com/en-us/compliance/regulatory/offering-hitrust)
 - [HIPAA HITRUST 9.2 blueprint sample](https://docs.microsoft.com/en-us/azure/governance/blueprints/samples/hipaa-hitrust-9-2)
-
-## Chapter 9
+- [GDPR](https://gdpr-info.eu/)
+- 
+## Chapter 11 - Secure Coding
 - [Fuzzing to improve the security and reliability of cloud services with RESTler](https://www.youtube.com/watch?v=FYmiPoRwEbE)
 - [REST API Fuzz Testing RAFT](https://github.com/microsoft/rest-api-fuzz-testing)
 
-## Chapter 10
+## Chapter 12 - Toolchain
 
-## Chapter 11
+## Chapter 13 - Database Security
 
-## Chapter 12
+## Chapter 14 - Security Services
 
-## Chapter 13
+## Chpater 15 - Deployment
 
-## Chapter 14
+## Chapter 16 Cryptography in Azure
+- [Test TLS Connectivity with OpenSSL](https://djangocas.dev/blog/test-tls-connectivity-with-openssl/)
 
-## Chapter 15 - Network Security for Developers
+## Chapter 17 - Network Security for Developers
 - [Enterprise-Scale Landing Zones](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/)
 - [Traditional Hub and Spoke Network](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli)
 - [Virtual WAN Hub and Spoke Network](https://docs.microsoft.com/en-us/azure/architecture/networking/hub-spoke-vwan-architecture)
@@ -52,9 +57,3 @@
 - [What is Azure Private Endpoint?](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview)
 - [Integrate your app with an Azure virtual network](https://docs.microsoft.com/en-us/azure/app-service/overview-vnet-integration)
 
-## Chapter 16
-
-## Chapter 17 Cryptography in Azure
-- [Test TLS Connectivity with OpenSSL](https://djangocas.dev/blog/test-tls-connectivity-with-openssl/)
-
-## Chapter 18
