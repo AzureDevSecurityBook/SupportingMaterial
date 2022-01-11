@@ -38,6 +38,7 @@
 - [.NET CNG SHA256 Source](https://referencesource.microsoft.com/#System.Core/System/Security/Cryptography/SHA256Cng.cs,6fd44f98799fd9b2)
 - [.NET CSP SHA256 Source](https://referencesource.microsoft.com/#System.Core/System/Security/Cryptography/SHA256CryptoServiceProvider.cs,c318cfa22505162e)
 - [.NET Managed SHA256 Source](https://referencesource.microsoft.com/#mscorlib/system/security/cryptography/sha256managed.cs,058b1ca27400fbd4)
+- [System cryptography: Use FIPS compliant algorithms for encryption, hashing, and signing](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)
 
 ## Chapter 11 - Secure Coding
 - [Fuzzing to improve the security and reliability of cloud services with RESTler](https://www.youtube.com/watch?v=FYmiPoRwEbE)
