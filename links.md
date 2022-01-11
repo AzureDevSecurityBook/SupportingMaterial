@@ -35,7 +35,9 @@
 - [Security and Privacy Controls for Information Systems and Organizations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf)
 - [NIST Cybersecurity Framework CSF](https://www.nist.gov/cyberframework)
 - [NIST CSF and Azure](https://docs.microsoft.com/en-us/azure/compliance/offerings/offering-nist-csf)
-- 
+- [.NET CNG SHA256 Source](https://referencesource.microsoft.com/#System.Core/System/Security/Cryptography/SHA256Cng.cs,6fd44f98799fd9b2)
+- [.NET CSP SHA256 Source](https://referencesource.microsoft.com/#System.Core/System/Security/Cryptography/SHA256CryptoServiceProvider.cs,c318cfa22505162e)
+- [.NET Managed SHA256 Source](https://referencesource.microsoft.com/#mscorlib/system/security/cryptography/sha256managed.cs,058b1ca27400fbd4)
 
 ## Chapter 11 - Secure Coding
 - [Fuzzing to improve the security and reliability of cloud services with RESTler](https://www.youtube.com/watch?v=FYmiPoRwEbE)
