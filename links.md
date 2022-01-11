@@ -27,11 +27,14 @@
 - [GDPR](https://docs.microsoft.com/en-us/compliance/regulatory/gdpr)
 - [PCI DSS](https://docs.microsoft.com/en-us/compliance/regulatory/offering-PCI-DSS)
 - [PCI SSF](https://www.pcisecuritystandards.org/documents/PCI-Secure-Software-Program-Guide-v1_1.pdf)
-- [RedRAMP](https://docs.microsoft.com/en-us/azure/compliance/offerings/offering-fedramp)
+- [FedRAMP](https://docs.microsoft.com/en-us/azure/compliance/offerings/offering-fedramp)
 - [Details of the FedRAMP High Regulatory Compliance built-in initiative](https://docs.microsoft.com/en-us/azure/governance/policy/samples/fedramp-high)
 - [FIPS PUB 199 - Standards for Security Categorization of Federal Information and Information Systems](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.199.pdf)
 - [New Azure Blueprint simplifies compliance with NIST SP 800-53](https://azure.microsoft.com/en-us/blog/new-azure-blueprint-simplifies-compliance-with-nist-sp-800-53/)
-- [Details of the NIST SP 800-53 Rev. 4 Regulatory Compliance built-in initiative](https://docs.microsoft.com/en-us/azure/governance/policy/samples/nist-sp-800-53-r4)
+- [Details of the NIST SP 800-53 Regulatory Compliance built-in initiative](https://docs.microsoft.com/en-us/azure/governance/policy/samples/nist-sp-800-53-r4)
+- [Security and Privacy Controls for Information Systems and Organizations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf)
+- [NIST Cybersecurity Framework CSF](https://www.nist.gov/cyberframework)
+- [NIST CSF and Azure](https://docs.microsoft.com/en-us/azure/compliance/offerings/offering-nist-csf)
 - 
 
 ## Chapter 11 - Secure Coding
