@@ -14,7 +14,7 @@
 
 ## Chapter 7 - Protecting Secrets 
 
-## Chpater 8 - Monitoring and Audit
+## Chapter 8 - Monitoring and Audit
 
 ## Chapter 9 - Governance
 - [Azure Security Benchmark](https://docs.microsoft.com/en-us/security/benchmark/azure/)
@@ -49,7 +49,7 @@
 
 ## Chapter 14 - Security Services
 
-## Chpater 15 - Deployment
+## Chapter 15 - Deployment
 
 ## Chapter 16 Cryptography in Azure
 - [Test TLS Connectivity with OpenSSL](https://djangocas.dev/blog/test-tls-connectivity-with-openssl/)
