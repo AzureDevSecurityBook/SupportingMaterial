@@ -41,6 +41,16 @@
 - [System cryptography: Use FIPS compliant algorithms for encryption, hashing, and signing](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)
 - [<enforceFIPSPolicy> Element](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/runtime/enforcefipspolicy-element)
 - [System and Organization Controls (SOC) 2 Type 2](https://docs.microsoft.com/en-us/azure/compliance/offerings/offering-soc-2)
+- [Mapping SOC 2 to NIST SP 800-53](https://us.aicpa.org/content/dam/aicpa/interestareas/frc/assuranceadvisoryservices/downloadabledocuments/othermapping/mapping-tsc-to-nist-800-53-criteria.xlsx)
+- [ISO/IEC 27001:2013 Information Security Management Standards](https://docs.microsoft.com/en-us/compliance/regulatory/offering-iso-27001)
+- [ISO/IEC 27034-1:2011 Information technology — Security techniques — Application security](https://www.iso.org/standard/44378.html)
+- [Center for Internet Security](https://www.cisecurity.org/)
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
   
   
 ## Chapter 11 - Secure Coding
