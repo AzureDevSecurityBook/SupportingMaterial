@@ -21,6 +21,7 @@
 
 ## Chapter 10 - Compliance
 - [Azure Service Trust Portal](https://servicetrust.microsoft.com/)
+- [Azure compliance documentation](https://docs.microsoft.com/en-us/azure/compliance/)
 - [HIPAA](https://www.healthit.gov/topic/privacy-security-and-hipaa/hipaa-basics)
 - [Health Information Trust Alliance (HITRUST) Common Security Framework (CSF) and Azure](https://docs.microsoft.com/en-us/compliance/regulatory/offering-hitrust)
 - [HIPAA HITRUST 9.2 blueprint sample](https://docs.microsoft.com/en-us/azure/governance/blueprints/samples/hipaa-hitrust-9-2)
@@ -47,8 +48,8 @@
 - [Center for Internet Security](https://www.cisecurity.org/)
 - [ISO 27001 and the NIST CSF (Cybersecurity Framework)](https://www.itgovernanceusa.com/iso27001-and-nist)
 - [The ISO 27002 Standard](https://www.itgovernanceusa.com/iso27002)
-- []()
-- []()
+- [Microsoft Defender for Cloud](https://docs.microsoft.com/en-us/azure/defender-for-cloud/)
+- [Compliance Program for Microsoft Cloud](https://www.microsoft.com/en-us/security/business/services/compliance-program-microsoft-cloud)
 - []()
 - []()
   
