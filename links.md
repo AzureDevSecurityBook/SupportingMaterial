@@ -84,5 +84,5 @@
 - [Azure Private Link service availability](https://docs.microsoft.com/en-us/azure/private-link/availability)
 - [What is Azure Private Endpoint?](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview)
 - [Integrate your app with an Azure virtual network](https://docs.microsoft.com/en-us/azure/app-service/overview-vnet-integration)
-- [Dangling DNS and Subdomain Takeovers - Oh My!](https://www.andrewkanieski.com/post/dangling-dns-and-subdomain-takeovers-oh-my/)
+- [Prevent dangling DNS entries and avoid subdomain takeover](https://docs.microsoft.com/en-us/azure/security/fundamentals/subdomain-takeover#use-azure-dns-alias-records)
 
