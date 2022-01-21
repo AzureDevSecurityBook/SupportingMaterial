@@ -50,7 +50,7 @@
 - [The ISO 27002 Standard](https://www.itgovernanceusa.com/iso27002)
 - [Microsoft Defender for Cloud](https://docs.microsoft.com/en-us/azure/defender-for-cloud/)
 - [Compliance Program for Microsoft Cloud](https://www.microsoft.com/en-us/security/business/services/compliance-program-microsoft-cloud)
-- []()
+- [MITRE ATT&CK® mappings released for built-in Azure security controls](https://www.microsoft.com/security/blog/2021/06/29/mitre-attck-mappings-released-for-built-in-azure-security-controls/)
 - []()
   
   
