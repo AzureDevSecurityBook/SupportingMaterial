@@ -1,0 +1,13 @@
+﻿@page
+@model YAFancyWebApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    <form method="post" action="~/welcome">    
+        Please specify your name
+        <input asp-for="Username" />  
+        <input type="submit" />
+    </form>
+</div>
