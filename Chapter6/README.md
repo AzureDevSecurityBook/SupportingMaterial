@@ -1,8 +1,8 @@
 # Designing and Developing Secure Microsoft Azure Solutions
 
-## Chapter 8 - Monitoring and Auditing
+## Chapter 6 - Monitoring and Auditing
 
-The current folder contains two demos for Chapter 8. This document describes how you can use them.
+The current folder contains two demos for Chapter 6. This document describes how you can use them.
 
 There are two different projects:
 
