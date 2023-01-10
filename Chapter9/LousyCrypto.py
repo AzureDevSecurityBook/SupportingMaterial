@@ -8,6 +8,3 @@ def decrypt(ciphertext):
 		index += 1
 
 	return plaintext
-
-
-
