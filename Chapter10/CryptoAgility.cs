@@ -1,4 +1,4 @@
-﻿namespace PracticalAgileCrypto;
+namespace PracticalAgileCrypto;
 
 using System;
 using System.Text;
@@ -24,13 +24,13 @@ public class AgileCrypto
     // 'Delim' is used to delimit the items in the resulting string
     private const char Delim = '|';
 
-    private Version              _ver;
-    private SymmetricAlgorithm?  _symCrypto;
-    private HMAC?                _hMac;
-    private DeriveBytes?         _keyDerivation;
-    private int                  _iterationCount;
-    private byte[]              _salt;
-    private byte[]?              _keyMaterial;
+    private Version _ver;
+    private SymmetricAlgorithm? _symCrypto;
+    private HMAC? _hMac;
+    private DeriveBytes? _keyDerivation;
+    private int _iterationCount;
+    private byte[] _salt;
+    private byte[]? _keyMaterial;
 
     public AgileCrypto(Version ver)
     {
@@ -57,9 +57,9 @@ public class AgileCrypto
                 _symCrypto = CreateSymmetricAlgorithm("DES");
                 _symCrypto.Mode = CipherMode.ECB;
                 _symCrypto.Padding = PaddingMode.PKCS7;
-                _hMac = new HMACMD5(); 
+                _hMac = new HMACMD5();
                 _iterationCount = 100;
-                _keyDerivation = new Rfc2898DeriveBytes(_keyMaterial, _salt, _iterationCount);
+                _keyDerivation = new Rfc2898DeriveBytes(_keyMaterial, _salt, _iterationCount, HashAlgorithmName.SHA1);
                 break;
 
             case Version.Version2:
@@ -69,7 +69,7 @@ public class AgileCrypto
                 _symCrypto.Padding = PaddingMode.PKCS7;
                 _hMac = new HMACMD5();
                 _iterationCount = 1000;
-                _keyDerivation = new Rfc2898DeriveBytes(_keyMaterial, _salt, _iterationCount);
+                _keyDerivation = new Rfc2898DeriveBytes(_keyMaterial, _salt, _iterationCount, HashAlgorithmName.SHA1);
                 break;
 
             case Version.Version3:
@@ -79,7 +79,7 @@ public class AgileCrypto
                 _symCrypto.Padding = PaddingMode.PKCS7;
                 _hMac = new HMACSHA1();
                 _iterationCount = 4000;
-                _keyDerivation = new Rfc2898DeriveBytes(_keyMaterial, _salt, _iterationCount);
+                _keyDerivation = new Rfc2898DeriveBytes(_keyMaterial, _salt, _iterationCount, HashAlgorithmName.SHA256);
                 break;
 
             case Version.Version4:
@@ -89,7 +89,7 @@ public class AgileCrypto
                 _symCrypto.Padding = PaddingMode.ANSIX923;
                 _hMac = new HMACSHA256();
                 _iterationCount = 20000;
-                _keyDerivation = new Rfc2898DeriveBytes(_keyMaterial, _salt, _iterationCount);
+                _keyDerivation = new Rfc2898DeriveBytes(_keyMaterial, _salt, _iterationCount, HashAlgorithmName.SHA512);
                 break;
 
             default:
@@ -105,35 +105,39 @@ public class AgileCrypto
     /// <returns>Base64-encoded string that includes: version info, IV, PBKDF# etc</returns>
     public string Protect(string pwd, string plaintext)
     {
-        if (_keyDerivation is null || _hMac is null || _symCrypto is null)
-            throw new ArgumentNullException($"null crypto arguments");
-
         BuildCryptoObjects(pwd);
 
         var sb = new StringBuilder();
 
-        byte[] encrypted = EncryptThePlaintext(plaintext);
+        if (_symCrypto is not null && _keyDerivation is not null && _hMac is not null)
+        {
+            byte[] encrypted = EncryptThePlaintext(plaintext);
 
-        sb.Append((int)_ver)
-            .Append(Delim)
-            .Append(Convert.ToBase64String(_symCrypto.IV))
-            .Append(Delim)
-            .Append(Convert.ToBase64String(_salt))
-            .Append(Delim)
-            .Append(Convert.ToBase64String(encrypted))
-            .Append(Delim);
+            sb.Append((int)_ver)
+                .Append(Delim)
+                .Append(Convert.ToBase64String(_symCrypto.IV))
+                .Append(Delim)
+                .Append(Convert.ToBase64String(_salt))
+                .Append(Delim)
+                .Append(Convert.ToBase64String(encrypted))
+                .Append(Delim);
 
-        // Now create an HMAC over all the previous data
-        // incl the version#, IV, salt, and ciphertext
-        // all but the ciphertext are plaintext, we're just protecting
-        // them all from tampering
+            // Now create an HMAC over all the previous data
+            // incl the version#, IV, salt, and ciphertext
+            // all but the ciphertext are plaintext, we're just protecting
+            // them all from tampering
 
-        // Derive a new key for this work
-        _hMac.Key = _keyDerivation.GetBytes(_hMac.HashSize);
-        _hMac.ComputeHash(Encoding.UTF8.GetBytes(sb.ToString()));
-        sb.Append(Convert.ToBase64String(_hMac.Hash));
+            // Derive a new key for this work
+            _hMac.Key = _keyDerivation.GetBytes(_hMac.HashSize);
+            _hMac.ComputeHash(Encoding.UTF8.GetBytes(sb.ToString()));
+            sb.Append(Convert.ToBase64String(_hMac.Hash));
 
-        return sb.ToString();
+            return sb.ToString();
+        } 
+        else 
+        {
+            throw new ArgumentNullException("One or more of Crypto/Derivation/MAC alg is null");
+        }
     }
 
     /// <summary>
@@ -148,50 +152,57 @@ public class AgileCrypto
         if (string.IsNullOrWhiteSpace(protectedBlob))
             throw new ArgumentException($"'{nameof(protectedBlob)}' cannot be null or empty.", nameof(protectedBlob));
 
-        if (_keyDerivation is null || _hMac is null || _symCrypto is null)
-            throw new ArgumentNullException($"null crypto arguments");
-
-        // Pull out the parts of the protected blob
-        // 0: version
-        // 1: IV
-        // 2: salt
-        // 3: ciphertext
-        // 4: MAC
-        const int version = 0, initvect = 1, salt = 2, ciphertext = 3, mac = 4;
-        string[] elements = protectedBlob.Split(new char[] { Delim });
-
-        // Get version
-        int.TryParse(elements[version], out int ver);
-        _ver = (Version)ver;
-
-        // Get IV/salt/ciphertext
-        byte[] iv = Convert.FromBase64String(elements[initvect]);
-        _salt = Convert.FromBase64String(elements[salt]);
-        byte[] ctext = Convert.FromBase64String(elements[ciphertext]);
-
-        // We have all the data we need to build the crypto algs
         BuildCryptoObjects(pwd);
 
-        _symCrypto.Key = _keyDerivation.GetBytes(_symCrypto.KeySize >> 3);
-        _symCrypto.IV = iv;
+        if (_symCrypto is not null && _keyDerivation is not null && _hMac is not null)
+        {
 
-        // Before we decrypt the ciphertext we need to check the MAC
-        if (string.IsNullOrWhiteSpace(elements[mac]))
-            throw new ArgumentException($"'{nameof(protectedBlob)}' Missing MAC.", nameof(protectedBlob));
+            // Pull out the parts of the protected blob
+            // 0: version
+            // 1: IV
+            // 2: salt
+            // 3: ciphertext
+            // 4: MAC
+            const int version = 0, initvect = 1, salt = 2, ciphertext = 3, mac = 4;
+            string[] elements = protectedBlob.Split(new char[] { Delim });
 
-        // Check the HMAC, this works by:
-        // 1) stripping the HMAC off the protected blob,
-        // 2) creating an HMAC of the resulting string above
-        // 3) comparing the HMAC in the protected blob and the generated HMAC
-        string blobLessMac = protectedBlob.Substring(0, protectedBlob.LastIndexOf(elements[mac]));
-        _hMac.Key = _keyDerivation.GetBytes(_hMac.HashSize);
-        byte[] result = _hMac.ComputeHash(Encoding.UTF8.GetBytes(blobLessMac));
-        if (string.Compare(elements[mac], Convert.ToBase64String(result), true) != 0)
-            throw new ArgumentException($"'{nameof(protectedBlob)}' Incorrect MAC.", nameof(protectedBlob));
+            // Get version
+            int.TryParse(elements[version], out int ver);
+            _ver = (Version)ver;
 
-        string plaintext = DecryptThePlainText(ctext);
+            // Get IV/salt/ciphertext
+            byte[] iv = Convert.FromBase64String(elements[initvect]);
+            _salt = Convert.FromBase64String(elements[salt]);
+            byte[] ctext = Convert.FromBase64String(elements[ciphertext]);
 
-        return plaintext;
+            // We have all the data we need to build the crypto algs
+            BuildCryptoObjects(pwd);
+
+            _symCrypto.Key = _keyDerivation.GetBytes(_symCrypto.KeySize >> 3);
+            _symCrypto.IV = iv;
+
+            // Before we decrypt the ciphertext we need to check the MAC
+            if (string.IsNullOrWhiteSpace(elements[mac]))
+                throw new ArgumentException($"'{nameof(protectedBlob)}' Missing MAC.", nameof(protectedBlob));
+
+            // Check the HMAC, this works by:
+            // 1) stripping the HMAC off the protected blob,
+            // 2) creating an HMAC of the resulting string above
+            // 3) comparing the HMAC in the protected blob and the generated HMAC
+            string blobLessMac = protectedBlob.Substring(0, protectedBlob.LastIndexOf(elements[mac]));
+            _hMac.Key = _keyDerivation.GetBytes(_hMac.HashSize);
+            byte[] result = _hMac.ComputeHash(Encoding.UTF8.GetBytes(blobLessMac));
+            if (string.Compare(elements[mac], Convert.ToBase64String(result), true) != 0)
+                throw new ArgumentException($"'{nameof(protectedBlob)}' Incorrect MAC.", nameof(protectedBlob));
+
+            string plaintext = DecryptThePlainText(ctext);
+
+            return plaintext;
+        }
+        else
+        {
+            throw new ArgumentNullException("One or more of Crypto/Derivation/MAC alg is null");
+        }
     }
 
     private static SymmetricAlgorithm CreateSymmetricAlgorithm(string name)
@@ -220,7 +231,7 @@ public class AgileCrypto
         swEncrypt.Write(plaintext);
         swEncrypt.Close();
         encrypted = msEncrypt.ToArray();
-      
+
         return encrypted;
     }
 
